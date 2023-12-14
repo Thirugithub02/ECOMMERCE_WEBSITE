@@ -1,0 +1,44 @@
+{% extends 'shop/layouts/main.html' %}
+{% load static%}
+{% block title %}
+Registration |product_image
+{% endblock title %}
+
+    {% block content %}
+    <section class ="bg-light py-4 my-5" style="min-height :600px ;">
+        <div class="container">
+        <div class="row ">
+            <div class="col-12">
+                <h1 class="fw-light">CART ITEMS</h1>
+                <table class="table table-bordered">
+                    <tr>
+                        <th>IMAGE</th>
+                        <th>PRODUCT NAME</th>
+                        <th>QUANTITY</th>
+                        <th>UNIT</th>
+                        <th>AMOUNT</th>
+                        <th>REMOVE</th>
+                    </tr>
+                    {% for item in Cart %}
+                    <tr>
+                        <td><img src="{{item.product.product_image.url}}" height="75px"  alt="{{item.product_name}}>"></td>
+                        <td>{{item.product.name}}</td>
+                        <td>{{item.product_qty}}</td>
+                        <td>{{item.product.selling_price | stringformat:'d'}}</td>
+                        
+                        <td class="amt">{{item.total_cost |stringformat:'d'}}</td>
+                        <td><button><a href ="{% url 'remove_cart' item.id %}" onclick ="return confirm ('Are you sure ?')" class="btn btn-danger btn-sm"> <i class="fa fa-trash"></i>REMOVE</a></button></td>
+                    </tr>
+                    {% endfor %}
+
+                </table>
+
+            
+            </div>
+        </div>
+    </div>
+    </section>
+    
+    
+    {% endblock content %}
+        

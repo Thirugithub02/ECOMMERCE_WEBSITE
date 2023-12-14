@@ -1,0 +1,41 @@
+{% extends 'shop/layouts/main.html' %}
+{% load static %}
+<!DOCTYPE html>
+<head>
+    <title>registration page</title>
+</head>
+<body>
+    {% block content %}
+    <div class="container" style="margin-top: 70px;">
+        <div class="row">
+            <div class="col-12">
+                <h1>User login </h1>
+                {% include 'shop/inc/message.html' %}
+                
+            </div>
+        </div>
+        <section class="py-4 my-5">
+            <div class="container>">
+                <div class="row">
+                    <div class="col-6">
+                        <form method="POST" action="">
+                            {% csrf_token%}
+                            <div class="mb-4">
+                                <label for="" class="form-label">Username</label>
+                                <input type="text" name="username" id="username" class="form-method" placeholder="Enter your name">
+                            </div>
+                            <div class="mb-4">
+                                <label for="" class="form-label">Password</label>
+                                <input type="password" name="password" id="password" class="form-method" placeholder="Enter valid password">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </form>
+        
+                </div>
+            </div>
+        </section>
+    </div>
+    {% endblock content %}
+    </body>
+</body>
+</html>

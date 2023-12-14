@@ -1,0 +1,37 @@
+.carousel-item{
+    object-fit: cover;
+    object-position: top;
+    height: 60vh;
+    overflow: hidden;
+
+}
+.old_price{
+    font-weight: bold;
+    color: red;
+}
+
+.new_price{
+    font-weight: bold;
+    background-color: forestgreen;
+    color: white;
+    padding: 2px;
+    border-radius: 5px;
+}
+.pic-box{
+    position: relative;
+}
+
+.hot{
+    background-color: orangered;
+    color: beige;
+    font-weight: bold;
+    width: 50px;
+    text-align: center;
+    display: inline;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    top: 0;
+    right: 20px;
+    z-index: 10;
+}
